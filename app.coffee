@@ -66,9 +66,11 @@ collection = (options) ->
       parts = name.split("-")
       date = new Date("#{parts[0]}-#{parts[1]}-#{parts[2]}")
       obj.date = date
+      obj.permalink = f.file_options._path
 
       obj.file_options = f.file_options
       f.file_options.post = obj
+
       @posts.push(obj)
       obj
 

@@ -1,6 +1,5 @@
 doctype html
 html
-
   head
     meta(charset='utf8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
@@ -12,12 +11,12 @@ html
     link(href='http://fonts.googleapis.com/css?family=Muli:300', rel='stylesheet')
     != css('/')
 
-  body
+  body(class=post ? 'post' : 'list')
     header.header
       .container
         ul.main-nav.nav
           li
-            a(href="#") Home
+            a(href="/") Home
           li
             a(href="#") Category
           li
@@ -27,10 +26,11 @@ html
     
     .main
       .hero
-        hgroup.hgroup
-          h2.subtitle Lorem ipsum dolor set
-          h1.maintitle Lorem Ipsum Blog
-        
+        unless post
+          hgroup.hgroup
+            h2.subtitle Lorem ipsum dolor set
+            h1.maintitle Lorem Ipsum Blog
+          
         .icon-bar
           img(src="/img/box-icon.svg")
     

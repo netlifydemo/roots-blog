@@ -34,6 +34,10 @@ blockquote
   line-height 2
   margin 0px 15% 50px
 
+a.muted, a.muted:visited
+  color rgb(119,119,119)
+  text-decoration none
+
 .container, .main
   position relative
   max-width 1100px
@@ -98,6 +102,9 @@ blockquote
     padding 60px 0 60px
     background rgb(241,241,241)
 
+.post .hero
+  margin-top -95px
+
 .icon-bar
   drop-shadow()
   position relative
@@ -111,6 +118,16 @@ blockquote
     margin-left -100px
     height 200px
     width 200px
+    z-index 10
+
+.post-title
+  text-align center
+  margin 30px 0 50px
+
+.post-body
+  margin 0 auto
+  max-width: 45em
+  line-height 1.8
 
 .post-summary
   col(1/2, cycle: 2)

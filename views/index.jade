@@ -24,6 +24,7 @@ block content
         h4.category-title
           img.icon(src="/img/box-icon.svg")
           span Assembly
-        h3.post-title= post.title
+        h3.post-title
+          a.muted(href=post.permalink)= post.title
         .post-text!= post.body
       

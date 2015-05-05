@@ -11,7 +11,7 @@ html
     link(href='http://fonts.googleapis.com/css?family=Muli:300', rel='stylesheet')
     != css('/')
 
-  body(class=post ? 'post' : 'list')
+  body
     header.header
       .container
         ul.main-nav.nav
@@ -24,17 +24,7 @@ html
         .secondary-nav
           a.login(href="#") Profile log in
     
-    .main
-      .hero
-        unless post
-          hgroup.hgroup
-            h2.subtitle Lorem ipsum dolor set
-            h1.maintitle Lorem Ipsum Blog
-          
-        .icon-bar
-          img(src="/img/box-icon.svg")
-    
-      block content
+    block main
     
     footer.footer
       .disclaimer.

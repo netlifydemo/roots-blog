@@ -1,0 +1,42 @@
+doctype html
+html
+
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name='description', content='description of your site')
+    meta(name='author', content= "author of the site")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= _path
+    link(href='http://fonts.googleapis.com/css?family=Merriweather', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Muli:300', rel='stylesheet')
+    != css('/')
+
+  body
+    header.header
+      .container
+        ul.main-nav.nav
+          li
+            a(href="#") Home
+          li
+            a(href="#") Category
+          li
+            a(href="#") About
+        .secondary-nav
+          a.login(href="#") Profile log in
+    
+    .main
+      .hero
+        hgroup.hgroup
+          h2.subtitle Lorem ipsum dolor set
+          h1.maintitle Lorem Ipsum Blog
+        
+        .icon-bar
+          img(src="/img/box-icon.svg")
+    
+      block content
+    
+    footer.footer
+      .disclaimer.
+        &copy; Someone Somewhere &mdash; this blog is fiction, all references to real persons or events are purely coincidential
+    != js('/')

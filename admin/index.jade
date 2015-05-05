@@ -1,0 +1,43 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    script(src="//use.typekit.net/ick8zlx.js")
+    script.
+      try{Typekit.load();}catch(e){}
+    title Roos Docs CMS
+    link(rel="stylesheet" href="//cms.netlify.com/assets/cms.css")
+    link(rel='stylesheet', href='/css/master.css')
+    link(rel='stylesheet', href='/css/admin.css')
+    base(href="/admin/")
+  body
+    script(type="text/x-handlebars" data-template-name='cms/application')
+      nav
+        a.logo(href='/')
+          h1 Roots
+          h2 enlightened static sites
+          
+        .links {{cms-breadcrumbs}}
+          
+        img.light-rays(src='/img/index/light-rays.svg')
+
+        .trees
+          .anchor.layer
+          img.trees1.layer(src='/img/single/t1.svg', data-depth='0.40')
+          img.trees2.layer(src='/img/single/t2.svg', data-depth='0.20')
+          img.trees3.layer(src='/img/single/t3.svg', data-depth='0.00')
+
+      main
+        .center {{outlet}}
+
+        .trees
+          .anchor.layer
+          img.t1.layer(src='/img/single/t4.svg', data-depth='0.40')
+          img.t2.layer(src='/img/single/t5.svg', data-depth='0.20')
+          img.t3.layer(src='/img/single/t6.svg', data-depth='0.00')
+
+      #footer.single
+        a(href='http://carrot.is'): img.built-at-carrot(src='/img/single/built-at-carrot.svg')
+
+    script(src="//cms.netlify.com/assets/vendor.js")
+    script(src="//cms.netlify.com/assets/cms.js")

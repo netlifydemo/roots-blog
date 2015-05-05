@@ -1,0 +1,29 @@
+extends layout
+
+block content  
+  blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  
+  .nav-bar
+    ul.nav
+      li
+        span Filter
+      li
+        a All
+      li
+        a Assembly
+      li
+        a Programming
+      li
+        a HTML5
+      li
+        a Clojure
+
+  .section
+    each post in posts.by_title()
+      .post-summary
+        h4.category-title
+          img.icon(src="/img/box-icon.svg")
+          span Assembly
+        h3.post-title= post.title
+        .post-text!= post.body
+      

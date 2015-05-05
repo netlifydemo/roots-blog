@@ -1,0 +1,130 @@
+@import 'jeet'
+@import '_settings'
+
+normalize-css()
+base()
+
+*
+  box-sizing border-box
+
+title-type()
+  font-family Muli
+  text-transform uppercase
+  font-weight 300
+
+drop-shadow()
+  box-shadow 0 3px 3px rgba(0,0,0,0.2)
+
+body, html
+  height 100%
+
+body
+  background rgb(239,239,239)
+  color rgb(119,119,119)
+
+h1,h2,h4,h5,h6
+  title-type()
+
+h1
+  font-size 60px
+
+blockquote
+  text-align center
+  color rgb(137,137,137)
+  line-height 2
+  margin 0px 15% 50px
+
+.container, .main
+  position relative
+  max-width 1100px
+  margin: 0 auto
+
+.section
+  cf()
+  margin: 30px
+
+.header
+  title-type()
+  drop-shadow()
+  position relative
+  z-index 10
+  padding 15px 0 10px
+  background: #fff
+  text-align center
+  a
+    link(rgb(21, 151, 188), 'lighten')
+  .secondary-nav
+    position absolute
+    right 0
+    top 0
+
+.footer
+  position relative
+  background: #fff
+  box-shadow 0 -3px 3px rgba(0,0,0,0.2)
+  padding 60px 30px
+  text-align center
+
+.nav
+  inline-list()
+  display inline-block
+
+.main-nav
+  font-size 20px
+  li
+    margin-right 40px
+
+.nav-bar
+  title-type()
+  margin 30px
+  padding 10px 0 5px
+  border-top 1px solid
+  border-bottom 1px solid
+  text-align center
+
+.main
+  background: #fff
+  min-height 100%
+  .section:last-child
+    margin-bottom 0
+
+.hero
+  cf()
+  overflow hidden
+  padding 60px 0 100px
+  text-align center
+  .hgroup
+    margin -60px 0 -100px
+    padding 60px 0 60px
+    background rgb(241,241,241)
+
+.icon-bar
+  drop-shadow()
+  position relative
+  background #fff
+  margin-top 100px
+  height 65px
+  img
+    position absolute
+    top -80px
+    left 50%
+    margin-left -100px
+    height 200px
+    width 200px
+
+.post-summary
+  col(1/2, cycle: 2)
+  drop-shadow()
+  margin-bottom 40px
+  padding: 0 30px 30px
+
+.category-title
+  margin 0 -30px
+  padding 15px 30px
+  background gray
+  color white
+  line-height 2em
+  .icon
+    height 2em
+    float left
+    margin-right 1em

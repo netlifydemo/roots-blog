@@ -13,6 +13,7 @@
     "lodash": "^3.8.0",
     "marked": "0.3.x",
     "roots": "^3.0.4",
+    "roots-posts": "^0.1.0",
     "rupture": "0.6.x",
     "stylus": "0.49.x",
     "when": "^3.7.3"

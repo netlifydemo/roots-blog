@@ -1,4 +1,4 @@
-repo: biilmann/roots-www
+repo: netlifydemo/roots-blog
 branch: master
 media_folder: "assets/uploads"
 collections:

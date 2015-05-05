@@ -29,7 +29,41 @@ html
       footer.footer
         .disclaimer.
           &copy; Someone Somewhere &mdash; this blog is fiction, all references to real persons or events are purely coincidential
+
+
+    script(type="text/x-handlebars" data-template-name='cms/widgets/tags-control')
+      <label>{{widget.label}} (comma separated)</label>
+      {{input value=raw_value}}
           
+    script(type="text/x-handlebars" data-template-name='cms/widgets/tags-preview').
+      {{#if tags}}
+        <h4 class="tags-container">
+          <span class="tags-list">{{tags}}</span>
+        </h4>
+      {{/if}}
+      
       
     script(src="//cms.netlify.com/assets/vendor.js")
     script(src="//cms.netlify.com/assets/cms.js")
+    script.
+      CMS.WidgetControl("tags", {
+        init: function() {
+          this._super();
+          this.set("raw_value", (this.get("widget.value") || []).join(", "));
+        },
+        raw_value: null,
+        setWidgetValue: function() {
+          this.set("widget.value", (this.get("raw_value").split(",").map(function(e) { return e.trim()})))
+        }.observes("raw_value")
+      });
+      
+      CMS.WidgetPreview("tags", {
+        tags: function() {
+          var value = this.get("widget.value");
+          if (value && value.length > 1) {
+            return value.slice(0,-1).join(", ") + " & " + value.slice(-1);
+          } else {
+            return value ? value[0] : "";
+          }
+        }.property("widget.value")
+      });

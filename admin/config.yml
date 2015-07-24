@@ -15,5 +15,5 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown", class: "post-body"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image", name: "image", widget: "image", optional: true}
       - {label: "Tags", name: "tags", widget: "tags"}

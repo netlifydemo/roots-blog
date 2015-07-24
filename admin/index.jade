@@ -10,29 +10,19 @@ html
     title Roots Blog Admin
     link(href='http://fonts.googleapis.com/css?family=Merriweather', rel='stylesheet')
     link(href='http://fonts.googleapis.com/css?family=Muli:300', rel='stylesheet')
+    
     link(rel="stylesheet" href="//cms.netlify.com/assets/cms.css")
+    
     != css('/')
     
     base(href="/admin/")
   body
-    script(type="text/x-handlebars" data-template-name='cms/application')
-      header.header
-        .container
-          ul.main-nav.nav
-            li
-              {{cms-breadcrumbs}}
-            
-          .secondary-nav!= '<a href="#" {{action "logout"}}>Log Out</a>'
-      
-      {{outlet}}
-      
-      footer.footer
-        .disclaimer.
-          &copy; Someone Somewhere &mdash; this blog is fiction, all references to real persons or events are purely coincidential
-
-
+    script(type="text/x-handlebars" data-template-name='cms/preview/posts').
+      {{cms-preview field='tags'}}
+      <h3 class="post-title">{{entry.title}}</h3>
+      {{cms-preview field='body'}}
+    
     script(type="text/x-handlebars" data-template-name='cms/widgets/tags-control')
-      <label>{{widget.label}} (comma separated)</label>
       {{input value=raw_value}}
           
     script(type="text/x-handlebars" data-template-name='cms/widgets/tags-preview').
@@ -42,9 +32,10 @@ html
         </h4>
       {{/if}}
       
-      
+
+    
     script(src="//cms.netlify.com/assets/vendor.js")
-    script(src="//cms.netlify.com/assets/cms.js")
+    script(src="//localhost:4200/assets/cms.js")
     script.
       CMS.WidgetControl("tags", {
         init: function() {

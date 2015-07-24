@@ -1,13 +1,19 @@
-repo: netlifydemo/roots-blog
-branch: master
+backend:
+  name: netlify-api
+  url: http://localhost:8080
+
 media_folder: "assets/uploads"
+public_folder: "assets"
+
 collections:
-  - slug: "posts"
+  - name: "posts"
     label: "Blog Post"
     create: true
     folder: "posts"
     format: "markdown-frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", class: "post-body"}
+      - {label: "Image", name: "image", widget: "image"}
       - {label: "Tags", name: "tags", widget: "tags"}
